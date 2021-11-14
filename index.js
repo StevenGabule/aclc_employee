@@ -127,7 +127,7 @@ const schedule = [
         reLogin: false,
       },
       {
-        time: '11:00 PM',
+        time: '11:02 AM',
         subject: 'WEB-DESIGN-BSBA-3A|3C',
         type: 'LOGOUT-LOGIN',
         reLogin: true,
