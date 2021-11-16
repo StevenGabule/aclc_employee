@@ -189,7 +189,8 @@ async function portalScrap() {
     let today = moment().format('dddd').toLowerCase();
     if (timeToday !== prevTime) {
       prevTime = timeToday;
-      console.log(`Date information: ${today}, ${timeToday}`);
+      // console.log(`Date information: ${today}, ${timeToday}`);
+      // console.log('.');
       let iterator = schedule.entries();
       for (let e of iterator) {
         if (e[1][today]) {
@@ -204,6 +205,7 @@ async function portalScrap() {
   }
 
   async function proceed(reLogin) {
+    console.log('Start Processing...');
     const browser = await puppeteer.launch({ headless: true });
     const page = await browser.newPage();
 
@@ -231,8 +233,10 @@ async function portalScrap() {
       );
       await page.click('[id=ContentPlaceHolder1_btnClock]');
       await browser.close();
+      console.log('End Processing...');
     } else {
       await browser.close();
+      console.log('End Processing...');
     }
   }
 
